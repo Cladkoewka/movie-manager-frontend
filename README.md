@@ -1,54 +1,92 @@
-# React + TypeScript + Vite
+# 🎬 Movie Manager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React app for browsing, searching, filtering, and viewing movie details. Built to work seamlessly with the [Movie Manager Backend](https://github.com/Cladkoewka/movie-manager).
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse all movies with pagination
+- Filter by genre, language, minimum rating
+- Search by movie title
+- Sort by title or rating (ascending/descending)
+- View detailed movie info: trailer, poster, description
+- Display user reviews
+- Responsive Bootstrap layout
+- Hosted via GitHub Pages
 
-## Expanding the ESLint configuration
+## ⚙️ Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework:** React + TypeScript
+- **Routing:** React Router
+- **HTTP:** Axios
+- **Styling:** Bootstrap 5
+- **Deployment:** GitHub Pages
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/Cladkoewka/movie-manager-frontend.git
+cd movie-manager-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+Start the dev server:
+
+```bash
+npm run dev
+```
+
+## 🚀 Deployment
+
+To build for production:
+
+```bash
+npm run build
+```
+
+To deploy to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+Make sure `homepage` is set correctly in `package.json`:
+
+```json
+"homepage": "https://Cladkoewka.github.io/movie-manager-frontend"
+```
+
+## 🧭 Routing
+
+```tsx
+<BrowserRouter basename="/movie-manager-frontend">
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/movie/:id" element={<MovieDetails />} />
+  </Routes>
+</BrowserRouter>
+```
+
+## 🏠 Home Page
+
+- Filters, search, and sorting handled via local state
+- Pagination support
+- Displays movies using reusable `<MovieCard />` components
+
+## 🎥 Movie Details Page
+
+- Fetches movie details and poster
+- Displays trailer (YouTube embed or MP4)
+- Loads and shows user reviews
+- Fallback image if poster is missing
+- Go-back navigation
+
+## 🛡️ License
+
+MIT
