@@ -1,0 +1,72 @@
+/* Вставьте это в ваш основной файл стилей */
+
+body {
+  font-family: 'Roboto', sans-serif;  /* Подключение шрифта Roboto */
+  background-color: #f4f4f4;          /* Светлый фон */
+  color: #333333;                      /* Тёмно-серый для текста */
+  line-height: 1.6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Плавный и чистый шрифт для заголовков */
+  color: #1a3c67;                    /* Тёмно-синий для заголовков */
+}
+
+/* Карточки фильмов */
+.movie-card {
+  background-color: #ffffff;         /* Белый фон для карточки */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* При наведении */
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Цвет ссылок */
+a {
+  color: #4a90e2;                    /* Акцентный синий для ссылок */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1a3c67;                    /* При наведении цвет темнеет */
+  text-decoration: underline;
+}
+
+/* Кнопки */
+button {
+  background-color: #4a90e2;          /* Цвет кнопки */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a3c67;          /* Тёмно-синий при наведении */
+}
+
+/* Для пагинации */
+.pagination .page-link {
+  color: #4a90e2;                    /* Синий цвет для ссылок на страницы */
+}
+
+.pagination .page-link:hover {
+  color: #1a3c67;                    /* Тёмно-синий при наведении */
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #cccccc;                    /* Серый для неактивных страниц */
+}
