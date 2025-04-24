@@ -39,7 +39,7 @@ export default function MovieDetails() {
     
 
     axios
-      .get(`http://localhost:8080/movies/${id}/poster`, { responseType: "blob" })
+      .get(`https://movie-manager-production-de61.up.railway.app/movies/${id}/poster`, { responseType: "blob" })
       .then((response) => {
         const imageUrl = URL.createObjectURL(response.data);
         setPosterUrl(imageUrl);

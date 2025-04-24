@@ -2,12 +2,13 @@ import axios from "axios";
 import { Movie } from "../types/Movie";
 import { Review } from "../types/Review";
 
-const BASE_URL = "http://localhost:8080/movies";
+const BASE_URL = "https://movie-manager-production-de61.up.railway.app/movies";
+
 
 
 export const fetchReviewsByMovieId = async (movieId: number) => {
   try {
-    const response = await axios.get<Review[]>(`http://localhost:8080/reviews/movie/${movieId}`);
+    const response = await axios.get<Review[]>(`https://movie-manager-production-de61.up.railway.app/reviews/movie/${movieId}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching reviews:", error);

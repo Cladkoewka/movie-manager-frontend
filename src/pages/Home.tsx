@@ -17,20 +17,16 @@ export default function Home() {
   });
   
   const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
     fetchMovies(filters)
       .then((data) => {
         setMovies(data.movies);
         setTotal(data.total);
-        setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Error fetching movies");
-        setLoading(false);
       });
   }, [filters]);
 

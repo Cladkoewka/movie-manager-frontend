@@ -13,7 +13,7 @@ export default function MovieCard({ movie }: Props) {
     <Link to={`/movie/${movie.id}`} className="text-decoration-none text-dark">
       <div className="movie-card card h-100 border-0 rounded-4 transition-all">
         <img
-          src={`http://localhost:8080/movies/${movie.id}/poster`}
+          src={`https://movie-manager-production-de61.up.railway.app/movies/${movie.id}/poster`}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
