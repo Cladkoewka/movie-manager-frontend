@@ -6,7 +6,7 @@ interface Props {
   movie: Movie;
 }
 
-const fallbackPoster = "../../public/fallback-poster.jpg";
+const fallbackPoster = "../../movie-manager-frontend/public/fallback-poster.jpg";
 
 export default function MovieCard({ movie }: Props) {
   return (

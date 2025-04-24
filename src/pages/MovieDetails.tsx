@@ -6,7 +6,7 @@ import { Movie } from "../types/Movie";
 import { Review } from "../types/Review";
 import axios from "axios";
 
-const fallbackPoster = "../../public/fallback-poster.jpg";
+const fallbackPoster = "../../movie-manager-frontend/public/fallback-poster.jpg";
 
 export default function MovieDetails() {
   const { id } = useParams();
