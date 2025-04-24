@@ -1,9 +1,7 @@
-/* Вставьте это в ваш основной файл стилей */
-
 body {
-  font-family: 'Roboto', sans-serif;  /* Подключение шрифта Roboto */
-  background-color: #f4f4f4;          /* Светлый фон */
-  color: #333333;                      /* Тёмно-серый для текста */
+  font-family: 'Roboto', sans-serif;  
+  background-color: #f4f4f4;         
+  color: #333333;                      
   line-height: 1.6;
 }
 
@@ -13,40 +11,35 @@ body {
   box-sizing: border-box;
 }
 
-/* Заголовки */
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif; /* Плавный и чистый шрифт для заголовков */
-  color: #1a3c67;                    /* Тёмно-синий для заголовков */
+  font-family: 'Poppins', sans-serif;
+  color: #1a3c67;                   
 }
 
-/* Карточки фильмов */
 .movie-card {
-  background-color: #ffffff;         /* Белый фон для карточки */
+  background-color: #ffffff;         
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* При наведении */
 .movie-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Цвет ссылок */
 a {
-  color: #4a90e2;                    /* Акцентный синий для ссылок */
+  color: #4a90e2;                  
   text-decoration: none;
 }
 
 a:hover {
-  color: #1a3c67;                    /* При наведении цвет темнеет */
+  color: #1a3c67;                   
   text-decoration: underline;
 }
 
-/* Кнопки */
 button {
-  background-color: #4a90e2;          /* Цвет кнопки */
+  background-color: #4a90e2;         
   color: white;
   border: none;
   padding: 10px 20px;
@@ -55,18 +48,17 @@ button {
 }
 
 button:hover {
-  background-color: #1a3c67;          /* Тёмно-синий при наведении */
+  background-color: #1a3c67;          
 }
 
-/* Для пагинации */
 .pagination .page-link {
-  color: #4a90e2;                    /* Синий цвет для ссылок на страницы */
+  color: #4a90e2;                   
 }
 
 .pagination .page-link:hover {
-  color: #1a3c67;                    /* Тёмно-синий при наведении */
+  color: #1a3c67;                  
 }
 
 .pagination .page-item.disabled .page-link {
-  color: #cccccc;                    /* Серый для неактивных страниц */
+  color: #cccccc;                   
 }

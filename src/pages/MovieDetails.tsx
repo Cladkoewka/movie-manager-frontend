@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";  // Импортируем Link для навигации
+import { useParams, Link } from "react-router-dom";  
 import { useEffect, useState } from "react";
 import { fetchMovieById } from "../api/movies";
 import { fetchReviewsByMovieId } from "../api/movies";
@@ -6,7 +6,7 @@ import { Movie } from "../types/Movie";
 import { Review } from "../types/Review";
 import axios from "axios";
 
-const fallbackPoster = "../../movie-manager-frontend/public/fallback-poster.jpg";
+const fallbackPoster = "https://movie-manager-production-de61.up.railway.app/movies/999/poster"; 
 
 export default function MovieDetails() {
   const { id } = useParams();
@@ -15,7 +15,6 @@ export default function MovieDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
-
 
   useEffect(() => {
     if (!id) return;
@@ -37,15 +36,16 @@ export default function MovieDetails() {
       .then(setReviews)
       .catch((err) => console.error("Error loading reviews:", err));
     
-
+    
     axios
       .get(`https://movie-manager-production-de61.up.railway.app/movies/${id}/poster`, { responseType: "blob" })
       .then((response) => {
         const imageUrl = URL.createObjectURL(response.data);
-        setPosterUrl(imageUrl);
+        setPosterUrl(imageUrl); 
       })
       .catch((err) => {
         console.error("Poster not found:", err);
+        setPosterUrl(fallbackPoster); 
       });
   }, [id]);
 
@@ -70,7 +70,7 @@ export default function MovieDetails() {
       <div className="row mb-5">
         <div className="col-md-4 d-flex flex-column justify-content-start mb-4 mb-md-0">
           <img
-            src={posterUrl || fallbackPoster}
+            src={posterUrl || fallbackPoster} 
             alt={movie.title}
             className="img-fluid rounded shadow"
             style={{ maxHeight: "500px", objectFit: "cover" }}

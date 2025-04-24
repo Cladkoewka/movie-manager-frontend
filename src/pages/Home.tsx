@@ -63,7 +63,6 @@ export default function Home() {
         />
       </div>
 
-      {/* Фильтрация */}
       <div className="d-flex mb-4">
         <input
           type="text"
@@ -105,7 +104,6 @@ export default function Home() {
         </select>
       </div>
 
-      {/* Список фильмов */}
       <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
         {movies.length > 0 ? (
           movies.map((movie) => (
